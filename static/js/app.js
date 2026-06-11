@@ -13,19 +13,32 @@ if (typeof gsap === "undefined") {
 function run() {
     gsap.registerPlugin(ScrollTrigger);
 
-    /* ---- Nav: transparent over hero, solid when scrolled ---- */
+    /* ---- Nav & Floating Action Scroll Handler ---- */
     const nav = document.querySelector(".nav");
-    if (nav) {
-        // Start transparent
-        nav.classList.add("nav--top");
+    const backToTop = document.querySelector(".float-btn--top");
+    
+    if (nav || backToTop) {
+        if (nav) nav.classList.add("nav--top");
 
         ScrollTrigger.create({
             start: "top top",
             onUpdate: (self) => {
-                if (self.scroll() > 30) {
-                    nav.classList.remove("nav--top");
-                } else {
-                    nav.classList.add("nav--top");
+                const scrolled = self.scroll();
+                
+                if (nav) {
+                    if (scrolled > 30) {
+                        nav.classList.remove("nav--top");
+                    } else {
+                        nav.classList.add("nav--top");
+                    }
+                }
+
+                if (backToTop) {
+                    if (scrolled > 300) {
+                        backToTop.classList.add("is-visible");
+                    } else {
+                        backToTop.classList.remove("is-visible");
+                    }
                 }
             }
         });
@@ -171,4 +184,41 @@ function run() {
             return () => { };
         }
     );
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach((item) => {
+        const trigger = item.querySelector(".faq-trigger");
+        const answer = item.querySelector(".faq-answer");
+        
+        trigger.addEventListener("click", () => {
+            const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+            
+            // Close all other FAQ items
+            faqItems.forEach((otherItem) => {
+                if (otherItem !== item) {
+                    const otherTrigger = otherItem.querySelector(".faq-trigger");
+                    const otherAnswer = otherItem.querySelector(".faq-answer");
+                    otherTrigger.setAttribute("aria-expanded", "false");
+                    otherAnswer.style.height = "0px";
+                }
+            });
+            
+            if (isExpanded) {
+                trigger.setAttribute("aria-expanded", "false");
+                answer.style.height = "0px";
+            } else {
+                trigger.setAttribute("aria-expanded", "true");
+                answer.style.height = `${answer.scrollHeight}px`;
+            }
+        });
+    });
+
+    // Floating back-to-top button click handler
+    if (backToTop) {
+        backToTop.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
 }
