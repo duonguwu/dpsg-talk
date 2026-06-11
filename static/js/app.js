@@ -20,11 +20,14 @@ if (nav) {
     nav.classList.add("nav--top");
 
     ScrollTrigger.create({
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top+=80",   // 80 ≈ nav height
-        onLeave: () => nav.classList.remove("nav--top"),
-        onEnterBack: () => nav.classList.add("nav--top"),
+        start: "top+=30 top",
+        onToggle: (self) => {
+            if (self.isActive) {
+                nav.classList.remove("nav--top");
+            } else {
+                nav.classList.add("nav--top");
+            }
+        }
     });
 }
 
