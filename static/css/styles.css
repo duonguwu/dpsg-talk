@@ -246,6 +246,8 @@ h2.section-title {
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
 }
 
+
+
 .nav .shell {
     height: var(--nav-h);
     display: flex;
@@ -710,6 +712,75 @@ section {
    TIMELINE
    ===================================================== */
 
+.program-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+}
+
+.program-media {
+    position: sticky;
+    top: calc(var(--nav-h) + 3rem);
+}
+
+.image-frame {
+    background: var(--paper);
+    padding: 1.2rem 1.2rem 2.2rem 1.2rem;
+    border-radius: 20px;
+    box-shadow:
+        0 20px 40px -15px rgba(0, 74, 198, 0.08),
+        0 1px 3px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--line);
+    transform: rotate(1.5deg);
+    transition: transform 0.6s cubic-bezier(.2, .8, .2, 1), box-shadow 0.6s;
+}
+
+.image-frame:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow:
+        0 30px 60px -15px rgba(0, 74, 198, 0.12),
+        0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.image-frame img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+}
+
+.frame-caption {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--blue);
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+@media (max-width: 1024px) {
+    .program-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .program-media {
+        position: static;
+        max-width: 620px;
+        margin: 0 auto;
+    }
+
+    .image-frame {
+        transform: none;
+    }
+
+    .image-frame:hover {
+        transform: scale(1.01);
+    }
+}
+
 .timeline-wrap {
     position: relative;
     max-width: 760px;
@@ -1046,7 +1117,7 @@ section {
     background: rgba(255, 255, 255);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 0.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1054,7 +1125,8 @@ section {
 }
 
 .about-logo-card img {
-    max-width: 80%;
+    max-width: 100%;
+    border-radius: 14px;
 }
 
 /* =====================================================
@@ -1128,7 +1200,7 @@ section {
 }
 
 .footer-brand p {
-    color: #888fa5;
+    color: #a8afc8;
     max-width: 32ch;
     font-size: 0.95rem;
 }
@@ -1138,13 +1210,13 @@ section {
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #6e7591;
+    color: #9da4c0;
     margin-bottom: 1rem;
 }
 
 .footer-col a,
 .footer-col p {
-    color: #c7ccdd;
+    color: #e2e6f3;
     font-size: 0.95rem;
     display: block;
     margin-bottom: 0.6rem;
@@ -1160,7 +1232,7 @@ section {
     padding-top: 1.6rem;
     text-align: center;
     font-size: 0.85rem;
-    color: #6e7591;
+    color: #8b92ad;
 }
 
 /* =====================================================
