@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPSG Talkshow</title>
+    <meta name="description"
+        content="Talkshow của DPSG: cầu nối thực chiến giữa giảng đường và công sở dành cho sinh viên năm 3, năm cuối và fresher.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/styles.css">
+    <script>document.documentElement.classList.add('gsap-ready');</script>
+</head>
+
+<body>
+
+    <!-- ===== NAV ===== -->
+    <header class="nav">
+        <div class="shell">
+            <a class="nav-brand" href="#top">
+                <img src="./assets/logo.png" alt="DPSG">
+            </a>
+            <nav class="nav-links">
+                <a href="#value">Giá trị</a>
+                <a href="#program">Chương trình</a>
+                <a href="#speakers">Diễn giả</a>
+                <a href="#about">Về DPSG</a>
+            </nav>
+            <a href="#signup" class="btn btn-primary nav-cta">Đăng ký</a>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top">
+        <div class="hero-photo" data-hero="photo">
+            <img src="./assets/hero-event.jpg" alt="Hình ảnh các sự kiện DPSG Connect">
+        </div>
+
+        <div class="shell hero-shell">
+            <div class="hero-text">
+                <div class="hero-top">
+                    <span class="kicker" data-hero="kicker">Talkshow hướng nghiệp</span>
+                    <span class="hero-edition" data-hero="kicker">Số 01 · 2026</span>
+                </div>
+
+                <h1 class="hero-headline">
+                    <span class="line"><span data-hero="line">Tăng tốc từ</span></span>
+                    <span class="line"><span data-hero="line"><span class="mark-word">giảng đường</span></span></span>
+                    <span class="line"><span class="outline" data-hero="line">đến công sở</span></span>
+                </h1>
+
+                <p class="hero-sub" data-hero="block">
+                    Kết nối kinh nghiệm của anh chị DPSG Connect để tiếp sức với thế hệ sinh viên hôm nay.
+                </p>
+
+                <div class="hero-cta-row" data-hero="block">
+                    <a href="#signup" class="btn btn-primary">Đăng ký tham dự</a>
+                    <a href="#program" class="btn btn-ghost">Xem chương trình</a>
+                </div>
+
+                <div class="hero-meta" data-hero="block">
+                    <div class="cell">
+                        <div class="k">Thời gian</div>
+                        <div class="v">07 · 2026</div>
+                    </div>
+                    <div class="cell">
+                        <div class="k">Địa điểm</div>
+                        <div class="v">TBD</div>
+                    </div>
+                    <div class="cell">
+                        <div class="k">Tham dự</div>
+                        <div class="v">Miễn phí</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats section-pad" style="padding-top:0;padding-bottom:0">
+        <div class="shell">
+            <div class="stats-grid">
+                <div class="stat reveal">
+                    <div class="num"><span class="count" data-to="70">0</span><span class="suffix">%</span></div>
+                    <p class="desc">sinh viên mới tốt nghiệp gặp "cú sốc thực tế" khi bước vào công sở</p>
+                </div>
+                <div class="stat reveal">
+                    <div class="num"><span class="count" data-to="3">0</span> <span class="suffix"
+                            style="font-size:0.5em">năm</span></div>
+                    <p class="desc">thời gian trung bình để tìm được định hướng nghề nghiệp rõ ràng</p>
+                </div>
+                <div class="stat reveal">
+                    <div class="num"><span class="count" data-to="1">0</span> <span class="suffix"
+                            style="font-size:0.5em">ngày</span></div>
+                    <p class="desc">đủ để rút ngắn hành trình đó lại nếu bạn có đúng người dẫn đường</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VALUE ===== -->
+    <section class="section-pad" id="value">
+        <div class="shell">
+            <div class="section-head">
+                <!-- <span class="index-num reveal">01</span> -->
+                <h2 class="section-title reveal">Thực chiến,<br>không lý thuyết</h2>
+                <p class="lead reveal">Khoảng cách giữa giảng đường và công sở không nằm ở kiến thức mà ở tư duy. Đây
+                    là ba thứ bạn sẽ mang về.</p>
+            </div>
+
+            <div class="value-list">
+                <div class="value-item reveal">
+                    <div class="vi-num">01</div>
+                    <div>
+                        <h3 class="vi-title">Chuyên gia thực chiến</h3>
+                        <p class="vi-body">Không phải giảng viên, mà là những người đang làm, đang quản lý, đang xây
+                            dựng
+                            đội nhóm trong chính ngành của bạn.</p>
+                    </div>
+                </div>
+                <div class="value-item reveal">
+                    <div class="vi-num">02</div>
+                    <div>
+                        <h3 class="vi-title">Chia sẻ ruột để ngoài da</h3>
+                        <p class="vi-body">Những gì họ ước mình biết sớm hơn về lương, về thăng tiến, về cách định vị
+                            bản thân ngay từ tháng đầu tiên.</p>
+                    </div>
+                </div>
+                <div class="value-item reveal">
+                    <div class="vi-num">03</div>
+                    <div>
+                        <h3 class="vi-title">Tư duy làm thuê như làm chủ</h3>
+                        <p class="vi-body">Không chỉ học cách xin việc mà còn học cách tạo ra giá trị và tăng trưởng
+                            nhanh
+                            trong bất kỳ môi trường nào.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TIMELINE ===== -->
+    <section class="section-pad" id="program" style="background:var(--paper);border-top:1px solid var(--line)">
+        <div class="shell">
+            <div class="section-head">
+                <!-- <span class="index-num reveal">02</span> -->
+                <h2 class="section-title reveal">Chương trình<br>chi tiết (nháp)</h2>
+                <p class="lead reveal">Một buổi sáng được thiết kế để bạn không chỉ nghe, mà còn hỏi và kết nối.</p>
+            </div>
+
+            <div class="timeline-wrap">
+                <div class="timeline-track">
+                    <div class="progress"></div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-time reveal">08:00</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-content reveal">
+                        <h3>Đón tiếp &amp; check-in</h3>
+                        <p>Chào đón các bạn, nhận tài liệu và thông tin sự kiện.</p>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-time reveal">08:30</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-content reveal">
+                        <h3>Khai mạc</h3>
+                        <p>DPSG và tầm nhìn của cộng đồng cựu hội viên.</p>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-time reveal">09:00</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-content reveal">
+                        <h3>Session 1 — Thị trường lao động thực tế</h3>
+                        <p>Bạn đang ở đâu? Thị trường thực sự đang cần gì?</p>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-time reveal">10:00</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-content reveal">
+                        <h3>Session 2 — Tư duy định vị &amp; tăng thu nhập</h3>
+                        <p>Cách tạo giá trị và bứt phá ngay từ năm đầu sự nghiệp.</p>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-time reveal">11:00</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-content reveal">
+                        <h3>Panel discussion &amp; Q&amp;A</h3>
+                        <p>Cơ hội trực tiếp hỏi những người đã đi trước và thành công.</p>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-time reveal">12:00</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-content reveal">
+                        <h3>Networking &amp; kết thúc</h3>
+                        <p>Kết nối với diễn giả và các bạn sinh viên cùng chí hướng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SPEAKERS ===== -->
+    <section class="speakers section-pad" id="speakers">
+        <div class="shell">
+            <div class="section-head">
+                <!-- <span class="index-num reveal">03</span> -->
+                <h2 class="section-title reveal">Những người<br>đã đi trước bạn</h2>
+                <p class="lead reveal">Các chuyên gia và quản lý đa ngành — đều là cựu DPSGer tâm huyết. Danh sách diễn
+                    giả sẽ được công bố sớm.</p>
+            </div>
+
+            <div class="speakers-grid">
+                <div class="sp-card reveal">
+                    <div class="sp-idx">01</div>
+                    <div class="sp-avatar">?</div>
+                    <div class="sp-name">[Tên diễn giả]</div>
+                    <div class="sp-role">[Chức danh]</div>
+                    <div class="sp-org">[Công ty]</div>
+                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
+                </div>
+                <div class="sp-card reveal">
+                    <div class="sp-idx">02</div>
+                    <div class="sp-avatar">?</div>
+                    <div class="sp-name">[Tên diễn giả]</div>
+                    <div class="sp-role">[Chức danh]</div>
+                    <div class="sp-org">[Công ty]</div>
+                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
+                </div>
+                <div class="sp-card reveal">
+                    <div class="sp-idx">03</div>
+                    <div class="sp-avatar">?</div>
+                    <div class="sp-name">[Tên diễn giả]</div>
+                    <div class="sp-role">[Chức danh]</div>
+                    <div class="sp-org">[Công ty]</div>
+                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
+                </div>
+                <div class="sp-card reveal">
+                    <div class="sp-idx">04</div>
+                    <div class="sp-avatar">?</div>
+                    <div class="sp-name">[Tên diễn giả]</div>
+                    <div class="sp-role">[Chức danh]</div>
+                    <div class="sp-org">[Công ty]</div>
+                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
+                </div>
+                <div class="sp-card reveal">
+                    <div class="sp-idx">05</div>
+                    <div class="sp-avatar">?</div>
+                    <div class="sp-name">[Tên diễn giả]</div>
+                    <div class="sp-role">[Chức danh]</div>
+                    <div class="sp-org">[Công ty]</div>
+                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
+                </div>
+                <div class="sp-card reveal">
+                    <div class="sp-idx">06</div>
+                    <div class="sp-avatar">?</div>
+                    <div class="sp-name">[Tên diễn giả]</div>
+                    <div class="sp-role">[Chức danh]</div>
+                    <div class="sp-org">[Công ty]</div>
+                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AUDIENCE ===== -->
+    <section class="section-pad">
+        <div class="shell">
+            <div class="section-head">
+                <!-- <span class="index-num reveal">04</span> -->
+                <h2 class="section-title reveal">Dành cho ai</h2>
+                <p class="lead reveal">Nếu bạn đang đứng ở ngưỡng cửa sự nghiệp, đây là nơi dành cho bạn.</p>
+            </div>
+
+            <div class="aud-grid">
+                <div class="aud-card reveal">
+                    <div class="aud-num">01</div>
+                    <h3>Sinh viên năm 3</h3>
+                    <p>Muốn chuẩn bị sớm, không bị bất ngờ khi ra trường.</p>
+                </div>
+                <div class="aud-card reveal">
+                    <div class="aud-num">02</div>
+                    <h3>Sinh viên năm cuối</h3>
+                    <p>Đang tìm việc, cần định hướng và kết nối thực tế.</p>
+                </div>
+                <div class="aud-card reveal">
+                    <div class="aud-num">03</div>
+                    <h3>Fresher · 1 - 2 năm</h3>
+                    <p>Muốn tăng tốc, không mất thêm thời gian mò mẫm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about section-pad" id="about">
+        <div class="shell">
+            <div class="about-grid">
+                <div>
+                    <span class="kicker reveal">Về cộng đồng</span>
+                    <h2 class="reveal">Cộng đồng quay lại<br>dìu dắt thế hệ sau</h2>
+                    <p class="reveal">
+                        DPSG Connect là ngôi nhà chung chính thức dành cho tất cả thành viên đã và đang tham gia Hội Học
+                        sinh Sinh viên Đức Phổ - DPSG.
+                        Mục tiêu cốt lõi là tạo môi trường HỖ TRỢ & GẮN KẾT giữa các thế hệ
+                    </p>
+                    <p class="reveal">Talkshow này là một trong những hoạt động kết nối thực tế nhất của DPSG giúp các
+                        bạn sinh viên
+                        không chỉ học kiến thức, mà xây dựng mạng lưới và tư duy đúng từ những người đã đi trước.</p>
+                </div>
+                <div class="about-logo-card reveal">
+                    <img src="./assets/logo.png" alt="DPSG">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta" id="signup">
+        <div class="shell">
+            <h2 class="reveal">Đừng để sự mơ hồ <em>kéo dài</em> thêm nữa</h2>
+            <p class="sub reveal">Số lượng có hạn · <b>Hoàn toàn miễn phí</b></p>
+            <a href="#" class="btn btn-primary reveal" style="font-size:1.05rem;padding:1.1rem 2.4rem">Đăng ký ngay</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="shell">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="./assets/logo.png" alt="DPSG">
+                    <p>Cộng đồng cựu hội viên chuyên ngành, đồng hành cùng sinh viên trên hành trình đi làm.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên kết</h4>
+                    <a href="https://www.facebook.com/groups/1845645492971464">Facebook</a>
+                    <a href="https://www.facebook.com/DucPhoStudentGroup">Fanpage</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên hệ</h4>
+                    <p>Email: TBD</p>
+                    <p>Hotline: TBD</p>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 DPSG. Tất cả quyền được bảo lưu.</div>
+        </div>
+    </footer>
+
+    <!-- ===== GSAP ===== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./static/js/app.js"></script>
+</body>
+
+</html>

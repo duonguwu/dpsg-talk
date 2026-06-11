@@ -1,0 +1,20 @@
+# Agent skills & configurations
+.agent/
+.agents/
+.claude/
+skills-lock.json
+
+# Dependencies
+node_modules/
+package-lock.json
+package.json
+
+# Temporary/Development / Design files
+trash/
+debug/
+connect_dpsg/
+original-139a63e1f8c2609a712e789186909ba4.webp
+
+# System files
+.DS_Store
+Thumbs.db
