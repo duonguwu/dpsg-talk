@@ -221,4 +221,40 @@ function run() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
     }
+
+    /* ---- Google Form Modal ---- */
+    const formModal = document.getElementById("formModal");
+    const formModalClose = document.getElementById("formModalClose");
+    const openBtns = document.querySelectorAll("[data-open-form]");
+
+    function openFormModal(e) {
+        if (e) e.preventDefault();
+        formModal.classList.add("is-open");
+        document.body.classList.add("modal-open");
+    }
+
+    function closeFormModal() {
+        formModal.classList.remove("is-open");
+        document.body.classList.remove("modal-open");
+    }
+
+    openBtns.forEach((btn) => btn.addEventListener("click", openFormModal));
+
+    if (formModalClose) {
+        formModalClose.addEventListener("click", closeFormModal);
+    }
+
+    // Close on backdrop click
+    if (formModal) {
+        formModal.addEventListener("click", (e) => {
+            if (e.target === formModal) closeFormModal();
+        });
+    }
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && formModal.classList.contains("is-open")) {
+            closeFormModal();
+        }
+    });
 }
