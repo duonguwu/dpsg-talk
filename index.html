@@ -45,13 +45,13 @@
 
     <!-- Vercel Web Analytics -->
     <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 
     <!-- Vercel Speed Insights -->
     <script>
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
 
@@ -137,7 +137,7 @@
                 </p>
 
                 <div class="hero-cta-row" data-hero="block">
-                    <a href="#" class="btn btn-primary" data-open-form>Đăng ký tham dự</a>
+                    <a href="#signup" class="btn btn-primary">Đăng ký tham dự</a>
                     <a href="#program" class="btn btn-ghost">Xem chương trình</a>
                 </div>
 
@@ -323,59 +323,22 @@
             <div class="section-head">
                 <!-- <span class="index-num reveal">03</span> -->
                 <h2 class="section-title reveal">Những người<br>đã đi trước bạn</h2>
-                <p class="lead reveal">Các chuyên gia và quản lý đa ngành — đều là cựu DPSGer tâm huyết. Danh sách diễn
-                    giả sẽ được công bố sớm.</p>
+                <p class="lead reveal">Các chuyên gia và quản lý đa ngành và đều là cựu DPSGer tâm huyết.</p>
             </div>
 
-            <div class="speakers-grid">
-                <div class="sp-card reveal">
-                    <div class="sp-idx">01</div>
-                    <div class="sp-avatar">?</div>
-                    <div class="sp-name">[Tên diễn giả]</div>
-                    <div class="sp-role">[Chức danh]</div>
-                    <div class="sp-org">[Công ty]</div>
-                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
+            <div class="speakers-coming-soon reveal">
+                <div class="coming-soon-icon">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
                 </div>
-                <div class="sp-card reveal">
-                    <div class="sp-idx">02</div>
-                    <div class="sp-avatar">?</div>
-                    <div class="sp-name">[Tên diễn giả]</div>
-                    <div class="sp-role">[Chức danh]</div>
-                    <div class="sp-org">[Công ty]</div>
-                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
-                </div>
-                <div class="sp-card reveal">
-                    <div class="sp-idx">03</div>
-                    <div class="sp-avatar">?</div>
-                    <div class="sp-name">[Tên diễn giả]</div>
-                    <div class="sp-role">[Chức danh]</div>
-                    <div class="sp-org">[Công ty]</div>
-                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
-                </div>
-                <div class="sp-card reveal">
-                    <div class="sp-idx">04</div>
-                    <div class="sp-avatar">?</div>
-                    <div class="sp-name">[Tên diễn giả]</div>
-                    <div class="sp-role">[Chức danh]</div>
-                    <div class="sp-org">[Công ty]</div>
-                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
-                </div>
-                <div class="sp-card reveal">
-                    <div class="sp-idx">05</div>
-                    <div class="sp-avatar">?</div>
-                    <div class="sp-name">[Tên diễn giả]</div>
-                    <div class="sp-role">[Chức danh]</div>
-                    <div class="sp-org">[Công ty]</div>
-                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
-                </div>
-                <div class="sp-card reveal">
-                    <div class="sp-idx">06</div>
-                    <div class="sp-avatar">?</div>
-                    <div class="sp-name">[Tên diễn giả]</div>
-                    <div class="sp-role">[Chức danh]</div>
-                    <div class="sp-org">[Công ty]</div>
-                    <!-- <span class="sp-badge">Cựu DPSGer</span> -->
-                </div>
+                <h3>Coming Soon</h3>
+                <p>Danh sách diễn giả sẽ được công bố trong thời gian sớm nhất.<br>Hãy theo dõi fanpage DPSG để cập nhật
+                    thông tin mới nhất!</p>
+                <a href="https://www.facebook.com/DucPhoStudentGroup" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-ghost" style="margin-top:1.2rem">Theo dõi Fanpage</a>
             </div>
         </div>
     </section>
@@ -607,15 +570,45 @@
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
-            <div class="form-modal-header">
-                <h3>Đăng ký tham dự</h3>
-                <p>Điền thông tin bên dưới để giữ chỗ (hoàn toàn miễn phí)</p>
+
+            <!-- Countdown state (before form opens) -->
+            <div class="form-modal-countdown" id="formCountdown">
+                <div class="countdown-icon">
+                    <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="var(--blue)" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <h3>Form đăng ký sắp mở!</h3>
+                <p class="countdown-sub">Đăng ký sẽ chính thức mở vào</p>
+                <div class="countdown-date">20:00 | 25/06/2026</div>
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="cd-unit"><span class="cd-num" id="cdDays">00</span><span class="cd-label">Ngày</span>
+                    </div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-unit"><span class="cd-num" id="cdHours">00</span><span class="cd-label">Giờ</span>
+                    </div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-unit"><span class="cd-num" id="cdMins">00</span><span class="cd-label">Phút</span>
+                    </div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-unit"><span class="cd-num" id="cdSecs">00</span><span class="cd-label">Giây</span>
+                    </div>
+                </div>
+                <p class="countdown-note">Theo dõi fanpage DPSG để nhận thông báo nhé!</p>
             </div>
-            <div class="form-modal-body">
-                <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSc-Uixf8MKZEsKEjq1Dobg5cY3imFBf-iexWxIfdETOTFRXVQ/viewform?embedded=true"
-                    width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Đang
-                    tải...</iframe>
+
+            <!-- Form state (after form opens) -->
+            <div class="form-modal-content" id="formContent" style="display:none">
+                <div class="form-modal-header">
+                    <h3>Đăng ký tham dự</h3>
+                    <p>Điền thông tin bên dưới để giữ chỗ (hoàn toàn miễn phí)</p>
+                </div>
+                <div class="form-modal-body">
+                    <iframe id="formIframe" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"
+                        loading="lazy">Đang tải...</iframe>
+                </div>
             </div>
         </div>
     </div>

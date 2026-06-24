@@ -222,15 +222,75 @@ function run() {
         });
     }
 
-    /* ---- Google Form Modal ---- */
+    /* ---- Google Form Modal (time-gated) ---- */
     const formModal = document.getElementById("formModal");
     const formModalClose = document.getElementById("formModalClose");
     const openBtns = document.querySelectorAll("[data-open-form]");
+    const formCountdown = document.getElementById("formCountdown");
+    const formContent = document.getElementById("formContent");
+    const formIframe = document.getElementById("formIframe");
+
+    // Form opens at 19:55 Vietnam time (UTC+7) on June 25, 2026
+    // Using UTC: 19:55 UTC+7 = 12:55 UTC
+    const FORM_OPEN_TIME = new Date("2026-06-25T12:55:00Z").getTime();
+    const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc-Uixf8MKZEsKEjq1Dobg5cY3imFBf-iexWxIfdETOTFRXVQ/viewform?embedded=true";
+
+    function isFormOpen() {
+        return Date.now() >= FORM_OPEN_TIME;
+    }
+
+    function updateCountdown() {
+        const now = Date.now();
+        const diff = FORM_OPEN_TIME - now;
+
+        if (diff <= 0) {
+            // Time's up — switch to form view
+            switchToForm();
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const pad = (n) => String(n).padStart(2, "0");
+        document.getElementById("cdDays").textContent = pad(days);
+        document.getElementById("cdHours").textContent = pad(hours);
+        document.getElementById("cdMins").textContent = pad(mins);
+        document.getElementById("cdSecs").textContent = pad(secs);
+    }
+
+    function switchToForm() {
+        if (formCountdown) formCountdown.style.display = "none";
+        if (formContent) formContent.style.display = "flex";
+        if (formIframe && !formIframe.src) {
+            formIframe.src = FORM_URL;
+        }
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+            countdownInterval = null;
+        }
+    }
+
+    // Initialize: check if form is already open
+    let countdownInterval = null;
+    if (isFormOpen()) {
+        switchToForm();
+    } else {
+        updateCountdown();
+        countdownInterval = setInterval(updateCountdown, 1000);
+    }
 
     function openFormModal(e) {
         if (e) e.preventDefault();
         formModal.classList.add("is-open");
         document.body.classList.add("modal-open");
+
+        // Load iframe on first open (only if form is open)
+        if (isFormOpen() && formIframe && !formIframe.src) {
+            formIframe.src = FORM_URL;
+        }
     }
 
     function closeFormModal() {
