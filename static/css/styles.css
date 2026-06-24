@@ -745,8 +745,7 @@ section {
 
 .image-frame img {
     width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 12px;
     margin-bottom: 1.2rem;
 }
