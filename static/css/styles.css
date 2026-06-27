@@ -1027,6 +1027,21 @@ section {
     margin: 0 auto;
 }
 
+/* ---- Speakers: Banner image ---- */
+
+.speakers-banner {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 20px 40px -15px rgba(0, 74, 198, 0.10),
+        0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.speakers-banner img {
+    width: 100%;
+    display: block;
+}
+
 /* =====================================================
    AUDIENCE
    ===================================================== */
