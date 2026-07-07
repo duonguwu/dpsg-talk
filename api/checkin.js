@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-    const { email } = req.query;
+    const { email, name } = req.query;
 
     if (req.method === 'POST') {
         // Xử lý request Check-in từ nút bấm của BTC
@@ -61,7 +61,8 @@ export default async function handler(req, res) {
                     
                     <div class="email-box">
                         <span style="color: #737686; font-size: 12px; text-transform: uppercase; font-weight: 700;">Hội viên / Khách mời</span><br>
-                        <b style="font-size: 16px; line-height: 2;">${email}</b>
+                        <b style="font-size: 20px; line-height: 1.8; color: #004ac6;">${name || 'Khách mời'}</b><br>
+                        <span style="font-size: 14px; color: #434655;">${email}</span>
                     </div>
 
                     <div class="info">
