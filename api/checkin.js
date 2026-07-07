@@ -6,7 +6,7 @@ export default async function handler(req, res) {
         const { pin } = req.body;
 
         // Mật khẩu dành cho BTC (bạn có thể đổi mật khẩu này)
-        if (pin !== '1234') {
+        if (pin !== '5501') {
             return res.status(403).json({ error: 'Sai mã PIN BTC!' });
         }
 
@@ -100,8 +100,13 @@ export default async function handler(req, res) {
 
                     // Script check-in
                     async function doCheckin() {
-                        const pin = prompt("KHU VỰC NỘI BỘ:\\nVui lòng nhập mã PIN của BTC để xác nhận Check-in:");
-                        if (!pin) return;
+                        // Kiểm tra xem máy này đã từng nhập đúng PIN chưa
+                        let pin = localStorage.getItem("btc_pin_dpsg");
+                        
+                        if (!pin) {
+                            pin = prompt("KHU VỰC NỘI BỘ:\\nVui lòng nhập mã PIN của BTC để xác nhận Check-in:");
+                            if (!pin) return;
+                        }
                         
                         document.getElementById("status").innerText = "Đang xử lý...";
                         document.getElementById("status").style.color = "#f59e0b";
@@ -114,9 +119,13 @@ export default async function handler(req, res) {
                             });
                             const data = await res.json();
                             if (data.success) {
+                                // Nếu thành công, lưu mã PIN vào bộ nhớ trình duyệt điện thoại để dùng cho người tiếp theo
+                                localStorage.setItem("btc_pin_dpsg", pin);
                                 document.getElementById("status").innerText = "✅ ĐÃ CHECK-IN THÀNH CÔNG!";
                                 document.getElementById("status").style.color = "#059669";
                             } else {
+                                // Nếu nhập sai, xóa lưu trữ để yêu cầu nhập lại
+                                localStorage.removeItem("btc_pin_dpsg");
                                 alert("Lỗi: " + data.error);
                                 document.getElementById("status").innerText = "";
                             }
